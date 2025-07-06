@@ -57,6 +57,11 @@ if [ ! -f "$HOME/.config/hypr/.initial_startup_done" ]; then
     ##    	ln -sf "$waybar_style" "$HOME/.config/waybar/style.css"
     #   	"$scriptsDir/Refresh.sh" > /dev/null 2>&1 & 
 	#fi
+     
+    # Start the gnome-keyring
+    eval $(gnome-keyring-daemon --start --components=secrets)
+    export SECRET_SERVICE_API=1
+
 
 
     # Create a marker file to indicate that the script has been executed.
